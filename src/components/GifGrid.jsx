@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { getGifs } from "../helpers/getGifs";
+import useFetchGifs from "../hooks/useFetchGifs";
+import GridItem from "./GridItem";
 
 /**
  * 
@@ -10,29 +10,30 @@ import { getGifs } from "../helpers/getGifs";
  */
 const GifGrid = ({ category, apiKey }) => {
     
-    const [gifs, setGifs] = useState([]);
+    const { gifs, isLoading } = useFetchGifs( category, apiKey );
 
-    useEffect(() => {
-        getGifs( category, apiKey )
-            .then( gifs => setGifs(gifs) )
-            .catch( alert );
-    }, [])
-    
     return (
         <div className="
                 text-center
-                border-dotted border-2 border-sky-500"
+                drop-shadow-2xl
+                m-1 md:m-3"
         >
-            <h4>{category}</h4>
+            <h4 className="
+                font-sans font-medium text-2xl text-slate-500
+                p-2
+                "
+            >
+                {`${category} gifs`}
+            </h4>
             <hr />
-            <div>
+            <div
+                className="
+                flex flex-row flex-wrap justify-evenly items-center
+                rounded-lg
+                "
+            >
             {
-                gifs.map(({ id, title, url }) => {
-                    return <div key={id}>
-                        <h2>{title}</h2>
-                        <img src={url} alt={category} />
-                    </div>    
-                })
+                isLoading || gifs.map(({ id, title, url }) => <GridItem key={id} title={title} url={url} category={category} />)
             }
             </div>
         </div>

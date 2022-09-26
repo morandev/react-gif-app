@@ -21,6 +21,10 @@ const CategoryAdder = ({ onEnterPress }) => {
 
     return (
         <input
+            className="
+                border border-sky-500
+                p-2
+            "
             type="text"
             value={input}
             onKeyUp={onInputSent}

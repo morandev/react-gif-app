@@ -19,7 +19,7 @@ const API_KEY = 'zYIDMpowlV24OPjnTagbvCMm8chVWRhp';
  */
 const GifExpertApp = () => {
     
-    const [ categories, setCategories ] = useState([]);
+    const [ categories, setCategories ] = useState(['goku']);
 
     const onEnterPress = ( input ) => {
         input = input.trim();
@@ -29,11 +29,14 @@ const GifExpertApp = () => {
 
     return (
         <div className="
-            flex-col justify-evenly  
-            max-h-screen h-4/5
-            border-dotted border-2 border-sky-500"
+            flex flex-col justify-center items-center"
         >
-            <h1 className="text-3xl font-bold underline">GifExpertApp</h1>
+            <h1 className="
+                font-sans text-3xl font-bold underline
+                p-4"
+            >
+                GifExpertApp
+            </h1>
             <CategoryAdder onEnterPress={onEnterPress} />
             <div>
                 {/* the key property is required */}
