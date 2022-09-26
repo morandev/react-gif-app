@@ -4,8 +4,8 @@
 
  * *GifExpertApp*
     - CategoryAdder
-    - *GifGrid*
-        - *GridItem*
+    - GifGrid
+        - GridItem
 
 ## Tools
 * Tailwind CSS 
