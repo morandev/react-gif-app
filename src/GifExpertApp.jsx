@@ -7,7 +7,7 @@ import GifGrid from "./components/GifGrid";
  * 
  * https://developers.giphy.com/
  */
-const API_KEY = 'zYIDMpowlV24OPjnTagbvCMm8chVWRhp';
+export const API_KEY = 'zYIDMpowlV24OPjnTagbvCMm8chVWRhp';
 
 /**
  * 
