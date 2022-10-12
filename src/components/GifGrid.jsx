@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import useFetchGifs from "../hooks/useFetchGifs";
 import GridItem from "./GridItem";
 
@@ -27,6 +28,9 @@ const GifGrid = ({ category, apiKey }) => {
                     {`${category} gifs`}
                </h4>
                <hr />
+               {
+                    isLoading&&<h2>Cargando...</h2>
+               }
                <div
                     className="
                 flex flex-row flex-wrap justify-evenly items-center
@@ -46,5 +50,10 @@ const GifGrid = ({ category, apiKey }) => {
           </div>
      );
 };
+
+GifGrid.propTypes = {
+     category: PropTypes.string.isRequired,
+     apiKey: PropTypes.string.isRequired
+}
 
 export default GifGrid;
