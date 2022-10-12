@@ -1,3 +1,6 @@
+import Proptypes from "prop-types";
+
+
 const GridItem = ({ id, title, url, category }) => {
      return (
           <div
@@ -35,5 +38,11 @@ const GridItem = ({ id, title, url, category }) => {
           </div>
      );
 };
+
+GridItem.propTypes = {
+     title: Proptypes.string.isRequired, 
+     url: Proptypes.string.isRequired
+}
+
 
 export default GridItem;
