@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React, { useState } from "react";
 
 /**
@@ -36,5 +37,9 @@ const CategoryAdder = ({ onEnterPress }) => {
           />
      );
 };
+
+CategoryAdder.propTypes = {
+     onEnterPress: PropTypes.func.isRequired,
+}
 
 export default CategoryAdder;
